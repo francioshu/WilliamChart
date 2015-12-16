@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Na
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
+        //导航栏
         mDrawerFragment = (DrawerFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.navigation_drawer);
         mDrawerFragment.setUp(R.id.navigation_drawer,
@@ -30,10 +30,11 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Na
     }
 
 
+
     @Override
     public void onNavigationDrawerItemSelected(int position) {
 
-        switch (position){
+        switch (position) {
             case 0:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new LineFragment())
@@ -60,14 +61,12 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Na
     }
 
 
-
     private void restoreActionBar() {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
     }
-
 
 
     @Override
@@ -105,11 +104,11 @@ public class MainActivity extends AppCompatActivity implements DrawerFragment.Na
         }
     }
 
-    public void onMenuClick(View view){
+    public void onMenuClick(View view) {
         mCurrFragment.onMenuClick(view);
     }
 
-    public void onPlay(View view){
+    public void onPlay(View view) {
         mCurrFragment.onPlay(view);
     }
 
